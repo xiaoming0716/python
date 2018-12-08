@@ -1,0 +1,14 @@
+把当前目录设置在 Path 下
+
+解压protobuf-2.5.0.zip，进入protobuf-2.5.0/vsprojects/
+VS打开protobuf.sln
+编译一下解决方案
+
+进入protobuf-2.5.0/python/，
+命令行运行 python setup.py build，python setup.py install
+
+这样proto命令就装入环境了
+通过python protoLua.py test.proto就可以生成test_PB.lua
+
+
+通过python protoC#.py test.proto就可以生成TestPB.cs

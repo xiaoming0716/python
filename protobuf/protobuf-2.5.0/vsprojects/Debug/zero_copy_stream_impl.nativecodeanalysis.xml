@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<DEFECTS><DEFECT><SFA><FILEPATH>f:\protobuf-2.5.0\src\google\protobuf\io\</FILEPATH><FILENAME>zero_copy_stream_impl.cc</FILENAME><LINE>157</LINE><COLUMN>36</COLUMN></SFA><DEFECTCODE>6326</DEFECTCODE><DESCRIPTION>可能会对两个常量进行比较。</DESCRIPTION><FUNCTION>google::protobuf::io::FileInputStream::CopyingFileInputStream::Skip</FUNCTION><DECORATED>?Skip@CopyingFileInputStream@FileInputStream@io@protobuf@google@@UAEHH@Z</DECORATED><FUNCLINE>153</FUNCLINE><PATH/></DEFECT></DEFECTS>

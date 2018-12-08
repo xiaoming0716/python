@@ -1,0 +1,17 @@
+//通用返回结果
+message PBBaseReturn{
+	optional int32 result           = 1;    //返回操作结果 1表示成功 0表示失败
+	optional string outmsg          = 2;    //提示消息
+	optional int32 optype           = 3;    //操作类型
+}
+
+
+//------------------------------捕鱼活动begin-----------------------------------
+
+//活动首页
+//activity_index.aspx?pbdata=
+message PBUserParams {	
+	optional string userid		= 1;	//用户ID
+}
+
+//-------------------------------捕鱼活动end-----------------------------------

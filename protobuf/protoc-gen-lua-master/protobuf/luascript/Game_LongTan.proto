@@ -1,0 +1,95 @@
+//勇闯龙穴消息结构
+
+//游戏命令
+//MDM_GF_FRAME					100												//框架命令
+
+//游戏状态
+//SUB_GF_GAME_SCENE				101												//游戏场景
+message PB_S_GameStatus
+{
+	optional int32				cbCurGameStatus						= 1;		//游戏状态
+}
+
+
+
+
+//游戏命令
+// MDM_GF_GAME         			200                 							//游戏命令
+
+//游戏开始。指的是开始一小局
+//SUB_S_GAME_START				100												//游戏开始
+message PB_S_GameStart
+{
+	optional int32			cbCanStart = 1;			//是否允许开始，1可以，0不可以
+	optional string			strWhy = 2;				//如果不允许开始，原因是什么。（比如已经达到今天赚取上限）
+	optional int32			cbStage = 3;			//大关（总共3个），从1开始
+	optional int32			cblittleStage = 4;		//小局，一关有15局，从1开始
+};
+
+//开始一小局
+//SUB_S_STAGE_START
+message PB_S_StageStart
+{
+	optional int32			cbCanStart = 1;			//是否允许开始，1可以，0不可以
+	optional string			strWhy = 2;				//如果不允许开始，原因是什么。（比如玩家金额不够押注金额）
+	optional int32			cbStage = 3;			//大关（总共3个），从1开始
+	optional int32			cblittleStage = 4;		//小局，一关有15局，从1开始
+	optional int32			cbMultiple = 5;			//倍率
+	optional int32			cbBetAmount = 6;		//押注金额。最终赢的金额 = cbMultiple * cbBetAmount
+	repeated int32			Jewels = 7;				//宝石阵的数据。紫，红，黄，蓝，绿，炸弹，他们的值分别是：1,2,3,4,5,6
+	repeated PS_S_Disappear		disappear = 8;			//可消掉的宝石数据
+	optional int32			cbColorCanDis1 = 9;			//紫色宝石能消去的次数
+	optional int32			cbColorCanDis2 = 10;		//红色宝石能消去的次数
+	optional int32			cbColorCanDis3 = 11;		//黄色宝石能消去的次数
+	optional int32			cbColorCanDis4 = 12;		//蓝色宝石能消去的次数
+	optional int32			cbColorCanDis5 = 13;		//绿色宝石能消去的次数
+};
+//一组可消掉的宝石
+message PS_S_Disappear
+{
+	repeated int32			pos = 1;				//位置数组
+	optional int32			color = 2;				//颜色值，紫，红，黄，蓝，绿，炸弹，他们的值分别是：1,2,3,4,5,6；如果是9表示该往下掉落了
+
+}
+
+//通关奖励
+//SUB_S_FinalReward		103	
+message PS_S_FinalReward
+{
+	optional int32			RewardBigType = 1;		//1是资源，2是道具
+	optional int32			RewardLittleType = 2;	//1-金币，2-话费，3-钻石，4-现金， 16-白银导弹
+	optional int32			RewardValue = 3;
+}
+
+
+//---------------------------------------------------------客户端发送----------------------------------------------
+//主命令
+//MDM_GF_GAME         			200                 									//游戏命令
+
+//用户结算，整个游戏结束
+//SUB_C_CONCLUDEGAME					1								//用户结算
+message PB_C_ConcludeGame
+{
+}
+
+//押注
+//SUB_C_BET				2
+message PB_C_BET
+{
+	optional int32			cbBet = 1;			//
+}
+
+
+//一小局客户端播放完毕
+//SUB_C_PlayEnd						3								
+message PB_C_PlayEnd
+{
+
+}
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

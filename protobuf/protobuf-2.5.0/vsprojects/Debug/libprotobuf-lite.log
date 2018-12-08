@@ -1,0 +1,22 @@
+﻿生成启动时间为 2017/4/13 9:09:03。
+     1>项目“F:\protobuf-2.5.0\vsprojects\libprotobuf-lite.vcxproj”在节点 2 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (libprotobuf.vcxproj, libprotoc.vcxproj, protoc.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>Lib:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"Debug\libprotobuf-lite.lib" /NOLOGO Debug\extension_set.obj
+         Debug\generated_message_util.obj
+         Debug\coded_stream.obj
+         Debug\zero_copy_stream.obj
+         Debug\zero_copy_stream_impl_lite.obj
+         Debug\message_lite.obj
+         Debug\repeated_field.obj
+         Debug\atomicops_internals_x86_msvc.obj
+         Debug\common.obj
+         Debug\once.obj
+         Debug\stringprintf.obj
+         Debug\wire_format_lite.obj
+         libprotobuf-lite.vcxproj -> F:\protobuf-2.5.0\vsprojects\Debug\libprotobuf-lite.lib
+     1>已完成生成项目“F:\protobuf-2.5.0\vsprojects\libprotobuf-lite.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.17
